@@ -2,7 +2,8 @@
 better_banking_interest_payment_modifier = {
 	icon = economy_positive
 	
-	monthly_income = gold * 1.03
+	x = 10 
+
+	monthly_income = gold
 	
-	stacking = no
 }
