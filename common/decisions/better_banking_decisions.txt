@@ -10,7 +10,6 @@ better_banking_decision = {
 	# }
 
 	effect = {	
-		add_gold = 1000		
 		add_character_modifier = better_banking_interest_payment_modifier	
 	}
 
