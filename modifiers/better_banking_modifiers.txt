@@ -1,0 +1,8 @@
+
+better_banking_interest_payment_modifier = {
+	icon = economy_positive
+	
+	monthly_income = 1
+	
+	stacking = yes
+}

@@ -1,0 +1,42 @@
+better_banking_decision = {
+	picture = "gfx/interface/illustrations/decisions/decision_destiny_goal.dds"
+	title = "Start Banking System"
+    desc = "You start a treasury lending program, lending your treasury gold to the citizens and businesses of your realm in exchange for monthly interest."
+    selection_tooltip = "This will return you a 3% monthly interest rate on your monthly starting treasury balance."
+    confirm_text = "Excellent"
+
+	# cooldown = { 
+		# days = 365
+	# }
+
+	effect = {	
+		add_gold = 1000		
+		add_character_modifier = better_banking_interest_payment_modifier	
+	}
+
+	ai_check_interval = 0
+}
+
+better_banking_stop_decision = {
+	picture = "gfx/interface/illustrations/decisions/decision_destiny_goal.dds"
+	title = "End Banking System"
+    desc = "You stop your treasury lending program, ending monthly interest payments to you."
+    selection_tooltip = "This will stop your banking system."
+    confirm_text = "Stop the banking system"
+	
+	cost = {
+		gold = 0
+	}
+	
+	is_shown = {
+		has_character_modifier = better_banking_interest_payment_modifier
+	}
+
+	effect = {	
+		remove_character_modifier = better_banking_interest_payment_modifier
+	
+	}
+
+	ai_check_interval = 0
+}
+

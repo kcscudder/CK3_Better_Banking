@@ -1,0 +1,32 @@
+
+on_death = {
+
+	effect = {
+
+		if = {
+		
+			limit = {
+				has_character_modifier = better_banking_interest_payment_modifier
+				exists = player_heir
+			}
+			
+			while = {
+			
+				limit = {
+					has_character_modifier = better_banking_interest_payment_modifier				
+				}
+				
+				remove_character_modifier = better_banking_interest_payment_modifier
+				
+				player_heir = {				
+					add_character_modifier = better_banking_interest_payment_modifier					
+				}
+			
+			}
+			
+		}	
+
+	}
+	
+}
+
