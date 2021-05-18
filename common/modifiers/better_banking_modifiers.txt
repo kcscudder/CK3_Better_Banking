@@ -2,8 +2,22 @@
 better_banking_interest_payment_modifier = {
 	icon = economy_positive
 	
-	x = 10 
+	#set_variable = {
+	#	name = interest 
+	#	value = 100
+	#}
 
-	monthly_income = gold
+	monthly_income = 100
+	
+	stacking = no
+
+}
+
+bought_war_bonds_modifier = {
+	icon = economy_positive
+
+	monthly_income = 10
+
+	stacking = yes
 	
 }

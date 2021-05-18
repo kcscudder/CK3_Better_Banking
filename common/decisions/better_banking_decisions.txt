@@ -1,23 +1,28 @@
 better_banking_decision = {
-	picture = "gfx/interface/illustrations/decisions/decision_destiny_goal.dds"
+	picture = "gfx/interface/illustrations/decisions/decision_realm.dds"
 	title = "Start Banking System"
-    desc = "You start a treasury lending program, lending your treasury gold to the citizens and businesses of your realm in exchange for monthly interest."
+	desc = "You start a treasury lending program, lending your treasury gold to the citizens and businesses of your realm in exchange for monthly interest."
     selection_tooltip = "This will return you a 3% monthly interest rate on your monthly starting treasury balance."
     confirm_text = "Excellent"
-
-	# cooldown = { 
-		# days = 365
-	# }
-
+	
 	effect = {	
-		add_character_modifier = better_banking_interest_payment_modifier	
+		add_character_modifier = better_banking_interest_payment_modifier
+			
+	}
+
+	is_shown = {
+		NOT = {
+			character = {
+				has_character_modifier = better_banking_interest_payment_modifier
+			}
+		}
 	}
 
 	ai_check_interval = 0
 }
 
 better_banking_stop_decision = {
-	picture = "gfx/interface/illustrations/decisions/decision_destiny_goal.dds"
+	picture = "gfx/interface/illustrations/decisions/decision_realm.dds"
 	title = "End Banking System"
     desc = "You stop your treasury lending program, ending monthly interest payments to you."
     selection_tooltip = "This will stop your banking system."
@@ -39,3 +44,39 @@ better_banking_stop_decision = {
 	ai_check_interval = 0
 }
 
+buy_war_bonds_decision = {
+	picture = "gfx/interface/illustrations/decisions/decision_realm.dds"
+	title = "Buy Foreign War Bonds"
+	desc = "You purchase a $1,000 War Bond issued by a foreign government, paying you monthly interest of $10 in exchange for an initial payment of gold. This bond will pay you $120 a year, equivalent to 12%."
+	selection_tooltip = "This will buy a foreign War Bond."
+	confirm_text = "Time to buy"
+
+	cost = {
+		gold = 1000
+	}
+
+	effect = {
+		add_character_modifier = bought_war_bonds_modifier
+	}
+
+	ai_check_interval = 0
+}
+
+sell_war_bonds_decision = {
+	picture = "gfx/interface/illustrations/decisions/decision_realm.dds"
+	title = "Sell Your Foreign War Bonds"
+	desc = "You sell war bonds you hold from a foreign government, stopping your monthly interest payments but returning your initial $1,000."
+	selection_tooltip = "Sell the foreign War Bond I own."
+	confirm_text = "Let's sell it"
+
+	effect = {
+		add_gold = 1000
+		remove_character_modifier = bought_war_bonds_modifier
+	}
+
+	is_shown = {
+		has_character_modifier = bought_war_bonds_modifier
+	}
+
+	ai_check_interval = 0 
+}
