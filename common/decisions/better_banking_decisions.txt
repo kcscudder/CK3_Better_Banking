@@ -12,9 +12,7 @@ better_banking_decision = {
 
 	is_shown = {
 		NOT = {
-			character = {
-				has_character_modifier = better_banking_interest_payment_modifier
-			}
+			has_character_modifier = better_banking_interest_payment_modifier
 		}
 	}
 
@@ -27,10 +25,6 @@ better_banking_stop_decision = {
     desc = "You stop your treasury lending program, ending monthly interest payments to you."
     selection_tooltip = "This will stop your banking system."
     confirm_text = "Stop the banking system"
-	
-	cost = {
-		gold = 0
-	}
 	
 	is_shown = {
 		has_character_modifier = better_banking_interest_payment_modifier
@@ -70,7 +64,14 @@ sell_war_bonds_decision = {
 	confirm_text = "Let's sell it"
 
 	effect = {
-		add_gold = 1000
+		
+		set_variable = {
+			name = interest
+			value = 100
+		}
+
+		add_gold = 1000 #pays back initial face value of war bond 
+
 		remove_character_modifier = bought_war_bonds_modifier
 	}
 

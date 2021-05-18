@@ -1,0 +1,13 @@
+#interest_effect = {
+#	hidden_effect = {
+#		if = {
+#			limit = {
+#				exists = this 
+#			}
+#			set_variable = {
+#				name = interest
+#				value = 50
+#			}
+#		}
+#	}
+#}
